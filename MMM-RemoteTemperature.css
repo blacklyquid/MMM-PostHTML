@@ -1,0 +1,21 @@
+.MMM-RemoteTemperature .symbol {
+  margin-right: 15px;
+}
+
+.MMM-RemoteTemperature .temp {
+  margin: 0;
+}
+
+.MMM-RemoteTemperature .humidity {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.MMM-RemoteTemperature .more {
+  margin: 0;
+}
+
+.MMM-RemoteTemperature .more .fa {
+  font-size: 16px;
+  margin-left: 15px;
+}
