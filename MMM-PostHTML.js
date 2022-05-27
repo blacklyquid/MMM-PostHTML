@@ -5,7 +5,7 @@
  * MIT Licensed.
  */
 
-Module.register('MMM-RemoteTemperature', {
+Module.register('MMM-PostHTML', {
   defaults: {
     sensorId: null,
     icon: 'home',
@@ -22,7 +22,7 @@ Module.register('MMM-RemoteTemperature', {
 
   getStyles() {
     return [
-      'MMM-RemoteTemperature.css',
+      'MMM-PostHTML.css',
       'font-awesome.css',
       'font-awesome5.css'
     ];
@@ -90,7 +90,7 @@ Module.register('MMM-RemoteTemperature', {
   },
 
   socketNotificationReceived(notificationName, payload) {
-    if (notificationName === 'MMM-RemoteTemperature.VALUE_RECEIVED' && payload) {
+    if (notificationName === 'MMM-PostHTML.VALUE_RECEIVED' && payload) {
       if (!this.config.sensorId || (this.config.sensorId && this.config.sensorId === payload.sensorId)) {
         this.viewModel = {
           temp: payload.temp,
@@ -105,7 +105,7 @@ Module.register('MMM-RemoteTemperature', {
   },
 
   _initCommunication() {
-    this.sendSocketNotification('MMM-RemoteTemperature.INIT', {
+    this.sendSocketNotification('MMM-PostHTML.INIT', {
       sensorId: this.config.sensorId
     });
   },
