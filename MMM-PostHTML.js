@@ -1,9 +1,10 @@
 /* global Module, moment */
 
-/* Magic Mirror Module: MMM-RemoteTemperature (https://github.com/balassy/MMM-RemoteTemperature)
- * By György Balássy (https://www.linkedin.com/in/balassy)
+/* Magic Mirror Module: MMM-PostHTML
+ * By Blacklyquid
  * MIT Licensed.
  */
+// { "html": "Your HTML Here", "sensorId": "MMM-section-id" }
 
 Module.register('MMM-PostHTML', {
   defaults: {
