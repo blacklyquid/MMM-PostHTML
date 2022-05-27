@@ -18,17 +18,7 @@ module.exports = NodeHelper.create({
   },
 
   _onJsonReceived(req, res) {
-    const params = req.body;
-
-    const payload = {
-      temp: params.temp,
-      humidity: params.humidity,
-      battery: params.battery,
-      sensorId: params.sensorId
-    };
-
-    this.sendSocketNotification('MMM-PostHTML.VALUE_RECEIVED', payload);
-
+    this.sendSocketNotification('MMM-PostHTML.VALUE_RECEIVED', req.body);
     res.sendStatus(200);
   }
 });
