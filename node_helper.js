@@ -7,14 +7,14 @@ module.exports = NodeHelper.create({
   },
 
   socketNotificationReceived(notificationName, payload) {
-    if (notificationName === 'MMM-RemoteTemperature.INIT') {
+    if (notificationName === 'MMM-PostHTML.INIT') {
       console.log(`MMM-RemoteTemperature Node helper: Init notification received from module for sensor "${payload.sensorId}".`); // eslint-disable-line no-console
     }
   },
 
   _initHandler() {
     this.expressApp.use(bodyParser.json());
-    this.expressApp.post('/remote-temperature', this._onTemperatureValueReceived.bind(this));
+    this.expressApp.post('/post-html', this._onTemperatureValueReceived.bind(this));
   },
 
   _onTemperatureValueReceived(req, res) {
@@ -27,7 +27,7 @@ module.exports = NodeHelper.create({
       sensorId: params.sensorId
     };
 
-    this.sendSocketNotification('MMM-RemoteTemperature.VALUE_RECEIVED', payload);
+    this.sendSocketNotification('MMM-PostHTML.VALUE_RECEIVED', payload);
 
     res.sendStatus(200);
   }
