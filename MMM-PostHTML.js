@@ -9,7 +9,7 @@
 Module.register('MMM-PostHTML', {
   defaults: {
     sensorId: null,
-    loadingText: 'Loading...',
+    loadingText: 'Waiting...',
     wrapperClass: 'post-html'
   },
 
