@@ -29,8 +29,7 @@ Module.register('MMM-PostHTML', {
         
     } else {
       const loadingEl = document.createElement('span');
-      loadingEl.innerHTML = this.translate('LOADING');
-      loadingEl.classList = 'dimmed small';
+      loadingEl.innerHTML = this.config.loadingText;
       wrapper.appendChild(loadingEl);
     }
 
