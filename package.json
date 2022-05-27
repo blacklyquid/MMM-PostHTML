@@ -1,6 +1,6 @@
 {
   "name": "MMM-PostHTML",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "MagicMirror module that displays html post to the magicmirro in JSON format.",
   "main": "MMM-PostHTML.js",
   "author": "Blacklyquid",
