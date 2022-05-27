@@ -8,16 +8,16 @@ module.exports = NodeHelper.create({
 
   socketNotificationReceived(notificationName, payload) {
     if (notificationName === 'MMM-PostHTML.INIT') {
-      console.log(`MMM-RemoteTemperature Node helper: Init notification received from module for sensor "${payload.sensorId}".`); // eslint-disable-line no-console
+      console.log(`MMM-PostHTML Node helper: Init notification received from module for sensor "${payload.sensorId}".`); // eslint-disable-line no-console
     }
   },
 
   _initHandler() {
     this.expressApp.use(bodyParser.json());
-    this.expressApp.post('/post-html', this._onTemperatureValueReceived.bind(this));
+    this.expressApp.post('/post-html', this._onJsonReceived.bind(this));
   },
 
-  _onTemperatureValueReceived(req, res) {
+  _onJsonReceived(req, res) {
     const params = req.body;
 
     const payload = {
