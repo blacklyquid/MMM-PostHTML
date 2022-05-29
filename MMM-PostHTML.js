@@ -8,7 +8,7 @@
 
 Module.register('MMM-PostHTML', {
   defaults: {
-    sensorId: null,
+    uid: null,
     loadingText: 'Waiting...',
     wrapperClass: 'post-html'
   },
@@ -39,7 +39,7 @@ Module.register('MMM-PostHTML', {
 
   socketNotificationReceived(notificationName, payload) {
     if (notificationName === 'MMM-PostHTML.VALUE_RECEIVED' && payload) {
-      if (!this.config.sensorId || (this.config.sensorId && this.config.sensorId === payload.sensorId)) {
+      if (!this.config.uid || (this.config.uid && this.config.uid === payload.uid)) {
         this.viewModel = payload;
         this.updateDom();
       }
@@ -48,7 +48,7 @@ Module.register('MMM-PostHTML', {
 
   _initCommunication() {
     this.sendSocketNotification('MMM-PostHTML.INIT', {
-      sensorId: this.config.sensorId
+      uid: this.config.uid
     });
   },
 
